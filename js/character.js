@@ -35,42 +35,42 @@ function createKarakter(){
 
 // itt IIFE-t csinaltam a functionbol hogy ne kelljen a betolt gombbal hivni ennek erdemes utanannezni
 
-(function createCard() {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://localhost:3000/karakter`, true);
+// (function createCard() {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open("GET", `http://localhost:3000/karakter`, true);
     
-    xhr.onload = function() {
-        if(this.status === 200){
-            const karakter = JSON.parse(this.responseText);
-            let output = '';
-            karakter.forEach(function(karakter){ 
-            output += `
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card bg-success">
-                            <div id="Load${karakter.id}" onclick="dinamicNavigate(${karakter.id})" class="btn-lg">
-                                <div class="card-body text-center text-dark">
-                                    <li> Nev: ${karakter.charName}</li>
-                                    <li> Kaszt: ${karakter.charCast}</li>
-                                    <li> Szint: ${karakter.charLevel}</li>
-                                    <li> KE: ${karakter.charKE}</li>
-                                    <li> TE: ${karakter.charTE}</li>
-                                    <li> VE: ${karakter.charVE}</li>
-                                    <li> FP: ${karakter.charFP}</li>
-                                    <li> EP: ${karakter.charEP}</li>
-                                    <li> SFE: ${karakter.charSFE}</li>
-                                    <li> SPJ: ${karakter.charSPJ}</li>
-                                    <li> SPB: ${karakter.charSPB}</li>                                                               
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
-                `; 
-            });
-            document.getElementById("cardsPlace").innerHTML=output;
-        }
-    }
-    xhr.send();
-})();
+//     xhr.onload = function() {
+//         if(this.status === 200){
+//             const karakter = JSON.parse(this.responseText);
+//             let output = '';
+//             karakter.forEach(function(karakter){ 
+//             output += `
+//                     <div class="col-md-6 col-lg-3">
+//                         <div class="card bg-success">
+//                             <div id="Load${karakter.id}" onclick="dinamicNavigate(${karakter.id})" class="btn-lg">
+//                                 <div class="card-body text-center text-dark">
+//                                     <li> Nev: ${karakter.charName}</li>
+//                                     <li> Kaszt: ${karakter.charCast}</li>
+//                                     <li> Szint: ${karakter.charLevel}</li>
+//                                     <li> KE: ${karakter.charKE}</li>
+//                                     <li> TE: ${karakter.charTE}</li>
+//                                     <li> VE: ${karakter.charVE}</li>
+//                                     <li> FP: ${karakter.charFP}</li>
+//                                     <li> EP: ${karakter.charEP}</li>
+//                                     <li> SFE: ${karakter.charSFE}</li>
+//                                     <li> SPJ: ${karakter.charSPJ}</li>
+//                                     <li> SPB: ${karakter.charSPB}</li>                                                               
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>    
+//                 `; 
+//             });
+//             document.getElementById("cardsPlace").innerHTML=output;
+//         }
+//     }
+//     xhr.send();
+// })();
 
 
 
@@ -91,7 +91,7 @@ function dinamicNavigate(id){
                 let div = document.createElement('div');
     
                 div.innerHTML = (`     
-                    <div class="card text-center text-dark bg-success p-3 d-flex justify-content-center">
+                    <div class="card text-center text-dark bg-success p-3 d-flex justify-content-center shadow" id="Card-${element.id}">
                         <div class="m-2">                                           
                             <img class="avatar" src="${element.image}">
                         </div>  
