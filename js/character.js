@@ -93,7 +93,7 @@ function dinamicNavigate(id){
                 div.innerHTML = (`     
                     <div class="card text-center text-dark bg-success p-3 d-flex justify-content-center">
                         <div class="m-2">                                           
-                            <img class="avatar" src="./img/armor.jpg">
+                            <img class="avatar" src="${element.image}">
                         </div>  
                         <h3>${element.name}</h3>                                                             
                         <p>Damage: <span>${element.damage}</span></p>                                                             
